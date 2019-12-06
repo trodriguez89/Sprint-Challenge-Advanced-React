@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import axios from "axios";
+import Nav from "./components/Nav";
+import PlayerCard from "./components/PlayerCard";
+import styled from "styled-components";
+
 import './App.css';
 
-function App() {
+const MainContain = styled.div`
+  text-align: center;
+`
+
+
+
+class App extends React.Component {
+  state = {
+    info: []
+  }
+
+  componentDidMount(){
+    axios.get("http://localhost:5000/api/players")
+    .then(response => {
+      this.setState({
+        info: response.data
+      })
+    })
+    .catch(error => {
+      console.log("Oops, something went wrong!", error)
+    })
+  }
+
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContain>
+      <Nav />
+      <PlayerCard info={this.state.info}/>
+    </MainContain>
   );
+}
 }
 
 export default App;
