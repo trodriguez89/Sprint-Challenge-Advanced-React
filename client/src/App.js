@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from "axios";
-import './App.css';
+import Nav from "./components/Nav";
 import PlayerCard from "./components/PlayerCard";
+
+import './App.css';
 
 class App extends React.Component {
   state = {
@@ -24,7 +26,7 @@ class App extends React.Component {
   render(){
   return (
     <div className="App">
-      <h3>Hello World!</h3>
+      <Nav />
       <PlayerCard info={this.state.info}/>
 
     </div>
