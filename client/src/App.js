@@ -20,7 +20,6 @@ class App extends React.Component {
   componentDidMount(){
     axios.get("http://localhost:5000/api/players")
     .then(response => {
-      console.log(response);
       this.setState({
         info: response.data
       })
@@ -35,7 +34,6 @@ class App extends React.Component {
     <MainContain>
       <Nav />
       <PlayerCard info={this.state.info}/>
-
     </MainContain>
   );
 }
