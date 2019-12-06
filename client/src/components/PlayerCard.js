@@ -15,6 +15,7 @@ const PlayerDiv = styled.div`
     width: 250px;
     height: 250px;
     margin-top: 10px;
+    font-family: 'Kalam', cursive;
 `
 
 const PlayerCard = props => {
@@ -27,7 +28,6 @@ const PlayerCard = props => {
                     <h4>Searches: {item.searches}</h4>
                 </PlayerDiv>
             ))}
-
         </PlayerContain>
     );
 }

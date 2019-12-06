@@ -2,14 +2,19 @@ import React from 'react';
 import {render} from "@testing-library/react";
 import App from './App';
 import Nav from "./components/Nav";
-import PlayerCard from "./components/PlayerCard";
 
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
 
-test("renders correctly", () => {
+test("renders without crashing", () => {
   render(<App/>)
 })
+
+test("navigation title is displaying correctly", () => {
+  const {getByText} = render(<Nav/>)
+  getByText(/women's world cup players ranked by search interest/i);
+})
+
+test("button displaying", () => {
+  const {getByText} = render(<Nav/>)
+  getByText(/dark mode/i)
+})
+

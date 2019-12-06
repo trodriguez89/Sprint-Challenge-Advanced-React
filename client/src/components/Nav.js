@@ -6,6 +6,7 @@ const NavStyle = styled.nav`
     display: flex;
     justify-content: center;
     border-bottom: 2px solid black;
+    font-family: 'Kalam', cursive;
 `
 const TitleDiv = styled.div`
     width: 93%;
@@ -24,6 +25,11 @@ const ButtonStyle = styled.button`
     background-color: black;
     color: white;
 `
+const H1Style = styled.h1`
+    font-size: 30px;
+    margin: 0;
+    padding: 5px 0;
+`
 
 const Nav = () => {
     const [darkMode, setDarkMOde] = useDarkMode(false);
@@ -36,7 +42,7 @@ const Nav = () => {
     return (
         <NavStyle>
             <TitleDiv>
-            <h2>Women's World Cup Players Ranked by Search Interest</h2>
+            <H1Style>Women's World Cup Players Ranked by Search Interest</H1Style>
             </TitleDiv>
             <ButtonDiv>
             <ButtonStyle onClick={toggleMode}>Dark Mode</ButtonStyle>
